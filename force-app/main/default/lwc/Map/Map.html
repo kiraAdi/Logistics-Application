@@ -1,0 +1,13 @@
+<template>                                
+ 	<template if:true={loaded}>
+        <lightning-map if:true={orders}
+                    map-markers={mapMarkers}
+                    markers-title={markersTitle}
+        ></lightning-map>
+    </template>
+ 
+    <template if:false={loaded}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+ 
+</template> 
