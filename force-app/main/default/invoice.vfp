@@ -1,0 +1,73 @@
+<apex:page standardController="Customer__c" >
+
+<!-------------------------Cascading Style Sheets-------------------------------->   
+
+<style>
+        div 
+    		{
+  				background-color: lightgrey;
+			}
+        p.dashed 
+    		{
+    			border-style: dashed;border-width: 0.5px;
+    		}
+        .myFormStyle 
+    		{
+        		background-color: blue;
+        	}
+</style>
+
+    
+<!-------------------------*************-------------------------------->     
+
+<apex:form styleClass="myFormStyle">
+    <!---------------------Customer Details Block-------------------->
+	<apex:pageBlock title="SPECIFICS OF CUSTOMER" >
+       <div>
+		 <apex:pageBlockSection>
+            <apex:outputField label="NAME :" value="{! Customer__c.Name }"/>
+            <apex:outputField label="LOCATION :" value="{! Customer__c.Address__c }"/>
+            <apex:outputField label="EMAIL Id :" value="{! Customer__c.Email__c }"/>
+         </apex:pageBlockSection>
+        <p class="dashed">  </p>
+        </div>
+     </apex:pageBlock>
+	<!--------------------- ****************************----------->
+    <!---------------------Product  Details Block----------->
+        <apex:pageBlock title="SPECIFICS OF PRODUCT">
+           <div>
+        	<apex:pageBlockSection>
+                <apex:outputField label="NAME OF THE PRODUCT :" value="{! Customer__c.Product__c }"/>
+                <apex:outputField label="CHARGE INDUCED :" value="{! Customer__c.Price__c}"/>
+            </apex:pageBlockSection>
+            <p class="dashed">  </p>
+            </div>
+        </apex:pageBlock>
+	<!--------------------- **********************----------->
+    <!--------------------- Delivery Details Block----------->
+        <apex:pageBlock title="SPECIFICS OF DELIVERY">
+            <div>
+            <apex:pageBlockSection>
+                <apex:outputField label="ASSIGNED DRIVER :" value="{! Customer__c.Assigned_Driver__c }"/>
+                <apex:outputField label="CHARGE INDUCED :" value="{! Customer__c.Charge_for_Delivery__c }"/>
+            </apex:pageBlockSection>
+            <p class="dashed">  </p>
+                </div>
+        </apex:pageBlock>
+	<!---------------------***********************----------->
+    <!---------------------Payment Details Block----------->
+        <apex:pageBlock title="SPECIFICS OF PAYMENT">
+            <div>
+           <apex:pageBlockSection>
+                <apex:outputField label="CHARGE INDUCED FOR PRODUCT :" value="{! Customer__c.Price__c}"/>
+                <apex:outputField label="CHARGE INDUCED FOR DELIVERY :" value="{! Customer__c.Charge_for_Delivery__c }"/>
+                <apex:outputField label="TOTAL COST :" value="{! Customer__c.Total_Cost__c }"/>
+            </apex:pageBlockSection>
+            <p class="dashed">  </p>
+             </div>
+        </apex:pageBlock>
+	<!---------------------*************************----------->
+
+    </apex:form>
+    
+</apex:page>
